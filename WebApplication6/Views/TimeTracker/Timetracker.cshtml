@@ -1,0 +1,61 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using WebApplication6.Areas.Identity.Data
+
+@model IEnumerable<TimeTrackers>
+
+@{
+    ViewData["Title"] = "Timetracker";
+}
+
+
+@inject SignInManager<TimeSystemUser> SignInManager
+@inject UserManager<TimeSystemUser> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+    {
+<h1>Timetracker</h1>
+<div class="container">
+<p>
+    <a asp-action="Index">Create New</a> |
+    <a asp-action="Port" asp-route-id="@UserManager.GetUserId(User)">Report</a>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeOut)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeOut)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+}

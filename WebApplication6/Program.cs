@@ -1,19 +1,24 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WebApplication6.Areas.Identity.Data;
 using WebApplication6.Data;
+using Microsoft.AspNetCore.Identity;
+
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("TimeSystemDbContextConnection");
-builder.Services.AddDbContext<TimeSystemDbContext>(options =>
+    builder.Services.AddDbContext<TimeTrackerDbContext>(options =>
     options.UseSqlite(connectionString));
-builder.Services.AddDefaultIdentity<TimeSystemUser>(options => 
-{
-    options.SignIn.RequireConfirmedAccount = false;
-    options.Password.RequireLowercase = false;
-    options.Password.RequireLowercase = false;
-    })
-    .AddEntityFrameworkStores<TimeSystemDbContext>();
+
+
+builder.Services.AddDefaultIdentity<TimeSystemUser>(options =>
+ {
+     options.SignIn.RequireConfirmedAccount = false;
+     options.Password.RequireLowercase = false;
+     options.Password.RequireLowercase = false;
+ })
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<TimeTrackerDbContext>();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
@@ -30,6 +35,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseStatusCodePages();
 
 app.UseRouting();
 app.UseAuthentication();

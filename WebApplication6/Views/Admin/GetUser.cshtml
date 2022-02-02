@@ -1,0 +1,64 @@
+﻿@using WebApplication6.Areas.Identity.Data
+@model IEnumerable<TimeSystemUser>
+@{
+     ViewData["Title"] = "All User";
+ }
+
+<main id="main" class="main">
+    <div class="pagetitle">
+      <h1>@ViewData["Tittle"]</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Home</a></li>
+          <li class="breadcrumb-item">Users</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Datatables</h5>
+              
+              <!-- Table with stripped rows -->
+              <table id="example" class="table datatable">
+                <thead>
+                  <tr>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Id)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.FirstName)</th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.LastName)</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model) {
+                  <tr>
+                    <td></td>
+                    <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+                    <td><a asp-action="GetUserTime" asp-route-id="@item.Id">Details</a></td>
+                  </tr>
+                    }
+                </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+  </main><!-- End #main -->
+
+  <script>
+      $(document).ready(function() {
+    $('#example').DataTable();
+} );
+  </script>

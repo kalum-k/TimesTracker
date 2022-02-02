@@ -1,0 +1,57 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using WebApplication6.Areas.Identity.Data
+@model WebApplication6.Areas.Identity.Data.TimeTrackers
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+
+@inject SignInManager<TimeSystemUser> SignInManager
+@inject UserManager<TimeSystemUser> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <h1>Edit</h1>
+    <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label asp-for="CurrentDate" class="control-label"></label>
+                        <input asp-for="CurrentDate" class="form-control" />
+                        <span asp-validation-for="CurrentDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TimeIn" class="control-label"></label>
+                        <input asp-for="TimeIn" class="form-control" />
+                        <span asp-validation-for="TimeIn" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TimeOut" class="control-label"></label>
+                        <input asp-for="TimeOut" class="form-control" />
+                        <span asp-validation-for="TimeOut" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="IdUser" class="control-label"></label>
+                        <input asp-for="IdUser" disabled class="form-control" />
+                        <span asp-validation-for="IdUser" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

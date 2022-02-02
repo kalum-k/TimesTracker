@@ -289,3 +289,4 @@ C:\Users\moonp\Downloads\test\WebApplication6\WebApplication6\obj\Debug\net6.0\T
 C:\Users\moonp\Downloads\test\WebApplication6\WebApplication6\obj\Debug\net6.0\ref\Time.dll
 C:\Users\moonp\Downloads\test\WebApplication6\WebApplication6\obj\Debug\net6.0\Time.pdb
 C:\Users\moonp\Downloads\test\WebApplication6\WebApplication6\obj\Debug\net6.0\Time.genruntimeconfig.cache
+C:\Users\moonp\Downloads\test\WebApplication6\WebApplication6\bin\Debug\net6.0\ServiceStack.Interfaces.dll

@@ -1,16 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using WebApplication6.Areas.Identity.Data;
+using WebApplication6.Data;
 using WebApplication6.Models;
 
 namespace WebApplication6.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private TimeTrackerDbContext _dbContext;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(TimeTrackerDbContext dbContext)
         {
-            _logger = logger;
+            _dbContext = dbContext;
         }
 
         public IActionResult Index()

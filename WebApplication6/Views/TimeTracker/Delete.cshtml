@@ -1,0 +1,39 @@
+﻿@using WebApplication6.Areas.Identity.Data
+@model TimeTrackers;
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="container">
+<form method="post">
+	<input asp-for="Id" hidden />
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Time</h2>
+			<hr />
+		</div>
+		@*<div asp-validation-summary="All"></div>*@
+		<div class="mb-3">
+			<input asp-for="CurrentDate" class="form-control" />
+			<span asp-validation-for="CurrentDate" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<input asp-for="TimeIn" class="form-control" />
+			<span asp-validation-for="TimeIn" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="TimeOut"></label>
+			<input asp-for="TimeOut" class="form-control" />
+			<span asp-validation-for="TimeOut" class="text-danger"></span>
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px">Button</button>
+		<a asp-controller="Timetracker" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Back to List
+		</a>
+	</div>
+</form>
+</div>
+@section Scripts{
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}
