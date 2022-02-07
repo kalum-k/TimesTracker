@@ -43,7 +43,7 @@
                     <td>@Html.DisplayFor(modelItem => item.TimeIn)</td>
                     <td>@Html.DisplayFor(modelItem => item.TimeOut)</td>
                     <td><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></td>
-                    <td><a asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
+                    <td><a asp-controller="TimeTracker" asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
                   </tr>
                     }
                 </tbody>

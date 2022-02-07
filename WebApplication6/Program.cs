@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration.GetConnectionString("TimeSystemDbContextConnection");
-    builder.Services.AddDbContext<TimeTrackerDbContext>(options =>
+var connectionString = builder.Configuration.GetConnectionString("TimeSystemDbContextConnection");    
+builder.Services.AddDbContext<TimeTrackerDbContext>(options =>
     options.UseSqlite(connectionString));
 
 

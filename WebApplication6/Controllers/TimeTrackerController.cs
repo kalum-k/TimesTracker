@@ -28,7 +28,7 @@ namespace TimeTracker.Controllers
             }
             var timeFromDbFirst = _dbContext.timeTackers
                 .Where(u => u.IdUser == id)
-                .OrderByDescending(y => y.Id);
+                .OrderByDescending(y => y.Id).Take(10);
 
             if (timeFromDbFirst == null)
             {
@@ -36,6 +36,8 @@ namespace TimeTracker.Controllers
             }
             return View(timeFromDbFirst);
         }
+
+
 
         //Get
         public IActionResult Create()

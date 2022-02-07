@@ -27,6 +27,7 @@ namespace TimeTacker.Controllers
         {
             //find who check time today
             var date = _dbContext.timeTackers
+                //.Count(u => u.IdUser == null)
                 .Where(d => d.CurrentDate == DateTime.Today)
                 .OrderByDescending(a => a.Id);
             return View(date);

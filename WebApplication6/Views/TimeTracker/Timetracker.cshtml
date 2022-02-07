@@ -14,48 +14,70 @@
 
 @if (SignInManager.IsSignedIn(User))
     {
-<h1>Timetracker</h1>
-<div class="container">
-<p>
-    <a asp-action="Index">Create New</a> |
-    <a asp-action="Port" asp-route-id="@UserManager.GetUserId(User)">Report</a>
-</p>
 
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>@ViewData["Tittle"]</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item">Time Tracker</li>
+                </ol>
+            </nav>
+    </div>
+    <!-- End Page Title -->
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CurrentDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TimeIn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TimeOut)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CurrentDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TimeIn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TimeOut)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<section class="section">
+    <div class="row">
+        <div class="col-lg-10">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Time Tracker</h5>
+                        <!-- Table with stripped rows -->
+                        <table id="example" class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.CurrentDate)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TimeIn)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TimeOut)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                        <tbody>
+                            @foreach (var item in Model) {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CurrentDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TimeIn)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TimeOut)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+              <!-- End Table with stripped rows -->
+            </div>
+        </div>
+    </div>
 </div>
+
+ </section>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+  </main><!-- End #main -->
 }
