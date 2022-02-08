@@ -2,13 +2,13 @@
 
 @model IEnumerable<TimeTrackers>
 @{
-    ViewData["Title"] = "GetUserTime";
+    ViewData["Title"] = "User's Time";
 }
 
 
 <main id="main" class="main">
     <div class="pagetitle">
-      <h1>GetUserTime</h1>
+      <h1>@ViewData["Title"]</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Home</a></li>

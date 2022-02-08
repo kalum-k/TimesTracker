@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "install",
+			"path": "wwwroot/lib/fontawesome-free/",
+			"problemMatcher": [],
+			"label": "npm: install - wwwroot/lib/fontawesome-free",
+			"detail": "install dependencies from package"
+		}
+	]
+}

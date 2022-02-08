@@ -1,9 +1,11 @@
 ﻿@using WebApplication6.Areas.Identity.Data
 @model TimeTrackers;
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Time Tracker Delete";
 }
-<div class="container">
+
+<h1>@ViewData["Title"]</h1>
+<main id="main" class="main">
 <form method="post">
 	<input asp-for="Id" hidden />
 	<div class="border p-3 mt-4">
@@ -31,7 +33,7 @@
 		</a>
 	</div>
 </form>
-</div>
+</main>
 @section Scripts{
 	@{
 		<partial name="_ValidationScriptsPartial" />

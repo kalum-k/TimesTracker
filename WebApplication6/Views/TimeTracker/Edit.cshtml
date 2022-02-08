@@ -1,44 +1,54 @@
-﻿@using Microsoft.AspNetCore.Identity
-@using WebApplication6.Areas.Identity.Data
-@model TimeTrackers;
+﻿@model WebApplication6.Areas.Identity.Data.TimeTrackers
 
-
-
-@inject SignInManager<TimeSystemUser> SignInManager
-@inject UserManager<TimeSystemUser> UserManager
-
-@if (SignInManager.IsSignedIn(User))
-{
-	<div class="container">
-		<form method="post" asp-controller="TimeTracker"   asp-action="Edit">
-			<div class="border p-3 mt-4">
-				<div class="row pb-2">
-					<h2 class="text-primary">Edit </h2>
-					<hr />
-				</div>
-				@*<div asp-validation-summary="All"></div>*@
-				<div class="mb-3">
-					<input asp-for="CurrentDate" hidden class="form-control" />
-					<span asp-validation-for="CurrentDate"  class="text-danger"></span>
-				</div>
-				<div class="mb-3">
-					<input asp-for="TimeIn" hidden  class="form-control" />
-					<span asp-validation-for="TimeIn"  class="text-danger"></span>
-				</div>
-				<div class="mb-3">
-					<input asp-for="IdUser" value=@UserManager.GetUserId(User) hidden class="form-control" />
-					<span asp-validation-for="IdUser" class="text-danger"></span>
-				</div>
-				<button type="submit" class="btn btn-primary" id="@UserManager.GetUserId(User)"  style="width:150px">Button</button>
-				<a asp-controller="TimeTracker" asp-route-id=@UserManager.GetUserId(User)  asp-action="Index" class="btn btn-secondary" style="width:150px">
-					Back to List
-				</a>
-			</div>
-		</form>
-	</div>
+@{
+    ViewData["Title"] = "Edit Time Tracker";
 }
-@section Scripts{
-	@{
-		<partial name="_ValidationScriptsPartial" />
-	}
-}
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>@ViewData["Tittle"]</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item">Time Tracker</li>
+                </ol>
+            </nav>
+    </div>
+    <!-- End Page Title -->
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="CurrentDate" class="control-label"></label>
+                <input asp-for="CurrentDate" class="form-control" />
+                <span asp-validation-for="CurrentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeIn" class="control-label"></label>
+                <input asp-for="TimeIn" class="form-control" />
+                <span asp-validation-for="TimeIn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdTimeStatus" class="control-label"></label>
+                <input asp-for="IdTimeStatus" class="form-control" />
+                <span asp-validation-for="IdTimeStatus" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input asp-for="IdUser" disable  class="form-control" />
+                <span asp-validation-for="IdUser"   class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+</main>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

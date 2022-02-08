@@ -60,6 +60,7 @@ namespace TimeTracker.Controllers
                 }
                 else
                 {
+
                     _dbContext.Add(timeTacker);
                     _dbContext.SaveChanges();
                     TempData["success"] = "Create successfully";
@@ -91,17 +92,17 @@ namespace TimeTracker.Controllers
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(TimeTrackers timeTacker)
+        public IActionResult Edit(TimeTrackers timeTackers)
         {
             if (ModelState.IsValid)
             {
 
-                _dbContext.timeTackers.Update(timeTacker);
+                _dbContext.timeTackers.Update(timeTackers);
                 _dbContext.SaveChanges();
 
                 return RedirectToAction("Index");
             }
-            return View(timeTacker);
+            return View(timeTackers);
         }
 
         public IActionResult Delete(int? id)

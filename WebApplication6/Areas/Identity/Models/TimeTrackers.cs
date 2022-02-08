@@ -28,16 +28,10 @@ namespace WebApplication6.Areas.Identity.Data
             CurrentDate = DateTime.Today;
             TimeIn = DateTime.Now;
             TimeOut = DateTime.Now;
-            
+            Sum = DateTime.Now.Subtract(TimeIn);
         }
         public int IdTimeStatus { get; set; }
         public TimeSpan Sum { get; set; }
         public string IdUser { get; set; }
-
-        //public TimeStatus timeStatus { get; set; }
-        //public ICollection<TimeTrackers> timeTrackers { get; set; }
-        
-        
-      
     }
 }

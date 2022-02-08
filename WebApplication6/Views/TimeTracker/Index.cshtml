@@ -2,7 +2,7 @@
 @using WebApplication6.Areas.Identity.Data
 @model TimeTrackers;
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Time Tracker";
 }
 
 @inject SignInManager<TimeSystemUser> SignInManager
@@ -13,8 +13,7 @@
     {
 <div id="hero">
     <div class="hero-container">
-      <h1>Time Tracker</h1>
-      
+      <h1>@ViewData["Title"]</h1>
       <div class="countdown" >
           <span id="datetime"></span>
           </div>

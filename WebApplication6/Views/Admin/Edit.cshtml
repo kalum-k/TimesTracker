@@ -3,7 +3,7 @@
 @model WebApplication6.Areas.Identity.Data.TimeTrackers
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit User's Time";
 }
 
 
@@ -14,9 +14,18 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <h1>Edit</h1>
-    <hr />
-    <div class="container">
+<main id="main" class="main">
+    <div class="pagetitle">
+      <h1>@ViewData["Tittle"]</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Home</a></li>
+          <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="GetUser">Users</a></li>
+          <li class="breadcrumb-item">Users's Time</li>
+          <li class="breadcrumb-item active">Edit User's Time</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
         <div class="row">
             <div class="col-md-8">
                 <form asp-action="Edit">
@@ -48,7 +57,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </main>
 }
 <div>
     <a asp-action="Index">Back to List</a>
