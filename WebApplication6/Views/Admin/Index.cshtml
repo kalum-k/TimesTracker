@@ -47,7 +47,7 @@
                       <i class="bi bi-people-fill"></i>
                     </div>
                     <div class="ps-3">
-                      <h6></h6>
+                      <h6>4</h6>
                     </div>
                   </div>
                 </div>
@@ -236,7 +236,7 @@
                 <tbody>
                     @foreach (var item in Model) {
                   <tr>
-                    <td ><a asp-controller="Admin" asp-route-id= asp-action="GetUserTime">@Html.DisplayFor(modelItem => item.IdUser)</a></td>
+                    <td ><a asp-controller="Admin" asp-route-id="@item.IdUser" asp-action="GetUserTime">@Html.DisplayFor(modelItem => item.IdUser)</a></td>
                     <td>@Html.DisplayFor(modelItem => item.TimeIn)</td>
                     <td>@Html.DisplayFor(modelItem => item.TimeOut)</td>
                   </tr>
