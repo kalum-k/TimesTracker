@@ -2,11 +2,13 @@ using Microsoft.EntityFrameworkCore;
 using WebApplication6.Areas.Identity.Data;
 using WebApplication6.Data;
 using Microsoft.AspNetCore.Identity;
+using TimeTracker.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("TimeSystemDbContextConnection");    
-builder.Services.AddDbContext<TimeTrackerDbContext>(options =>
+builder.Services.AddDbContext<TimeTrackerContext>(options =>
+    options.UseSqlite(connectionString));builder.Services.AddDbContext<TimeTrackerDbContext>(options =>
     options.UseSqlite(connectionString));
 
 

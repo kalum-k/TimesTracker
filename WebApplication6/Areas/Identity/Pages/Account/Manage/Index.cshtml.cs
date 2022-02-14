@@ -50,6 +50,10 @@ namespace TimeTracker.Areas.Identity.Pages.Account.Manage
             [Display (Name ="Last Name")]
             public string LastName { get; set; }
 
+            [EmailAddress]
+            [Display(Name ="Email")]
+            public string Email { get; set; }
+
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
@@ -58,8 +62,6 @@ namespace TimeTracker.Areas.Identity.Pages.Account.Manage
         private async Task LoadAsync(TimeSystemUser user)
         {
             var userName = await _userManager.GetUserNameAsync(user);
-            //var firstName = await _userManager.GetFirstNameAsync(user);
-            //var lastName = await _userManager.GetLastNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
 
             Username = userName;
@@ -67,8 +69,9 @@ namespace TimeTracker.Areas.Identity.Pages.Account.Manage
             Input = new InputModel
             {
                 UserName = userName,
-                //FirstName = firstName,
-                //LastName = lastName,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
                 PhoneNumber = phoneNumber
             };
         }
@@ -99,17 +102,18 @@ namespace TimeTracker.Areas.Identity.Pages.Account.Manage
                 return Page();
             }
 
-            var userName = await _userManager.GetUserNameAsync(user);
-            if(Input.UserName != userName)
+            if (Input.FirstName != user.FirstName)
             {
-                var setUserName = await _userManager.SetUserNameAsync(user, Input.UserName);
-                if (!setUserName.Succeeded)
-                {
-                    StatusMessage = "error when you try to set User name.";
-                    return RedirectToPage();
-                }
+                user.FirstName = Input.FirstName;
             }
-
+            if (Input.LastName != user.LastName)
+            {
+                user.LastName = Input.LastName;
+            }
+            if (Input.Email != user.Email)
+            {
+                user.Email = Input.Email;
+            }
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
             if (Input.PhoneNumber != phoneNumber)
             {
@@ -121,6 +125,7 @@ namespace TimeTracker.Areas.Identity.Pages.Account.Manage
                 }
             }
 
+            await _userManager.UpdateAsync(user);
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";
             return RedirectToPage();

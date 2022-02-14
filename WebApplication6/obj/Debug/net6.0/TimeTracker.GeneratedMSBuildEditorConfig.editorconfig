@@ -8,133 +8,145 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TimeTracker
 build_property.RootNamespace = TimeTracker
-build_property.ProjectDir = C:\Users\moonp\Downloads\test\WebApplication6\WebApplication6\
+build_property.ProjectDir = c:\Users\moonp\Downloads\test\WebApplication6\WebApplication6\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\moonp\Downloads\test\WebApplication6\WebApplication6
+build_property.MSBuildProjectDirectory = c:\Users\moonp\Downloads\test\WebApplication6\WebApplication6
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/Login.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1N0YXR1c01lc3NhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/Register.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/_AuthLayout.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/_AuthLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX0F1dGhMYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/_ViewImports.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/_ViewStart.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Admin/CreateRole.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Admin/CreateRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlUm9sZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Admin/Edit.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Admin/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Admin/GetUser.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Admin/GetUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2V0VXNlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Admin/GetUserTime.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Admin/GetUserTime.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2V0VXNlclRpbWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Admin/Index.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Home/Index.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Admin/IndexMonth.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXhNb250aC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Home/Privacy.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Shared/Error.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Shared/_LoginPartial.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/TimeTracker/Create.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/TimeTracker/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGltZVRyYWNrZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/TimeTracker/Delete.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/TimeTracker/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGltZVRyYWNrZXJcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/TimeTracker/Edit.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/TimeTracker/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGltZVRyYWNrZXJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/TimeTracker/Index.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/TimeTracker/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGltZVRyYWNrZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/TimeTracker/Port.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/TimeTracker/Port.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGltZVRyYWNrZXJcUG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/TimeTracker/Timetracker.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/TimeTracker/Timetracker.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGltZVRyYWNrZXJcVGltZXRyYWNrZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/_ViewImports.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/_ViewStart.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Shared/_Layout.cshtml]
+[c:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-o2isozgdpy

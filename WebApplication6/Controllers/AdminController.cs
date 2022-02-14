@@ -27,8 +27,18 @@ namespace TimeTacker.Controllers
         {
             //find who check time today
             var date = _dbContext.timeTackers
-                //.Count(u => u.IdUser == null)
                 .Where(d => d.CurrentDate == DateTime.Today)
+                .OrderByDescending(a => a.Id);
+            return View(date);
+        }
+
+        
+
+        public IActionResult IndexMonth()
+        {
+            var date = _dbContext.timeTackers
+                //.Count(u => u.IdUser == null)
+                .Where(d => d.CurrentDate.Month == DateTime.Now.Month)
                 .OrderByDescending(a => a.Id);
             return View(date);
         }
@@ -47,6 +57,7 @@ namespace TimeTacker.Controllers
             }
             var timeFromDbFirst = _dbContext.timeTackers
                 .Where(u => u.IdUser == id)
+                .Take(10)
                 .OrderByDescending(y => y.Id);
             //.Include(y => y.user);
             if (timeFromDbFirst == null)
