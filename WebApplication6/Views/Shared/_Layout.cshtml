@@ -29,21 +29,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <body onload="myFunction()" style="margin:0;">
-    
-                @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
-    {
-
-    }           else @if (SignInManager.IsSignedIn(User) && User.IsInRole("Users"))
-    {
-               
-    }           
-               
-                <div class="login-container">
                   <partial name="_LoginPartial.cshtml" />
-                </div>
-            </div>
-
-    
         <main role="main" class="pb-3">
                 <div id="loader"></div>
                     <div style="display:none;" id="myDiv" class="animate-bottom">
@@ -54,7 +40,7 @@
 var myVar;
 
 function myFunction() {
-  myVar = setTimeout(showPage, 3000);
+  myVar = setTimeout(showPage, 1000);
 }
 
 function showPage() {

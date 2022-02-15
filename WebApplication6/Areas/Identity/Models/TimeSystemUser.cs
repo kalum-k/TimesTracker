@@ -22,6 +22,8 @@ public class TimeSystemUser : IdentityUser
     [PersonalData]
     public int IdRole { get; set; }
 
+ 
+
     
 }
 

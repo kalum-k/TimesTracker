@@ -1,9 +1,10 @@
 ﻿@using WebApplication6.Areas.Identity.Data
 
-@model IEnumerable<TimeTrackers> 
+@model IEnumerable<TimeTrackers>
 @{
-    ViewData["Title"] = "User's Time";
+    ViewData["Title"] = "GetUserTimeMonth";
 }
+
 
 <main id="main" class="main">
     <div class="pagetitle">
@@ -43,7 +44,7 @@
           <div class="card">
               <br/>
               <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots align-content-end"></i></a>
                   <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                     <li class="dropdown-header text-start">
                       <h6>Filter</h6>
@@ -108,3 +109,5 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+

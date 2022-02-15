@@ -25,10 +25,15 @@ namespace TimeTacker.Controllers
 
         public IActionResult Index()
         {
+            ViewData["countDate"] = _dbContext.timeTackers.Count(u => u.CurrentDate == DateTime.Today).ToString();
+            ViewData["countMonth"] = _dbContext.timeTackers.Count(m => m.CurrentDate.Month == DateTime.Now.Month).ToString();
             //find who check time today
             var date = _dbContext.timeTackers
                 .Where(d => d.CurrentDate == DateTime.Today)
-                .OrderByDescending(a => a.Id);
+                //come later
+                //.Include(f => f.FirstName)
+                //.Include(l => l.LastName)
+                .OrderByDescending(a => a.CurrentDate);
             return View(date);
         }
 
@@ -36,6 +41,8 @@ namespace TimeTacker.Controllers
 
         public IActionResult IndexMonth()
         {
+            ViewData["countDate"] = _dbContext.timeTackers.Count(u => u.CurrentDate == DateTime.Today).ToString();
+            ViewData["countMonth"] = _dbContext.timeTackers.Count(m => m.CurrentDate.Month == DateTime.Now.Month).ToString();
             var date = _dbContext.timeTackers
                 //.Count(u => u.IdUser == null)
                 .Where(d => d.CurrentDate.Month == DateTime.Now.Month)
@@ -66,6 +73,25 @@ namespace TimeTacker.Controllers
             }
             return View(timeFromDbFirst);
         }
+
+        public IActionResult GetUserTimeMonth(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var timeFromDbFirst = _dbContext.timeTackers
+                .Where(u => u.IdUser == id && u.CurrentDate.Month == DateTime.Now.Month)
+                .Take(10)
+                .OrderByDescending(y => y.Id);
+            //.Include(y => y.user);
+            if (timeFromDbFirst == null)
+            {
+                return NotFound();
+            }
+            return View(timeFromDbFirst);
+        }
+
 
         public IActionResult CreateRole()
         {

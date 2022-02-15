@@ -22,20 +22,15 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="CurrentDate" class="control-label"></label>
-                <input asp-for="CurrentDate" class="form-control" />
+                <input asp-for="CurrentDate" disabled class="form-control" />
                 <span asp-validation-for="CurrentDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="TimeIn" class="control-label"></label>
-                <input asp-for="TimeIn" class="form-control" />
+                <input asp-for="TimeIn" disabled class="form-control" />
                 <span asp-validation-for="TimeIn" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="IdTimeStatus" class="control-label"></label>
-                <input asp-for="IdTimeStatus" class="form-control" />
-                <span asp-validation-for="IdTimeStatus" class="text-danger"></span>
-            </div>
-            
+       
             <div class="form-group">
                 <input asp-for="IdUser" disable  class="form-control" />
                 <span asp-validation-for="IdUser"   class="text-danger"></span>

@@ -84,14 +84,6 @@ namespace WebApplication6.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    /*if(userId == 1)
-                    {
-                        return View(); //checke login with Admin Id
-                    }else if(userId == 2 ){
-                        retrun View(); //checke login with User Id
-                    }else{
-                        return NonContent();
-                    }*/
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)

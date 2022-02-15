@@ -33,5 +33,7 @@ namespace WebApplication6.Areas.Identity.Data
         public int IdTimeStatus { get; set; }
         public TimeSpan Sum { get; set; }
         public string IdUser { get; set; }
+        
+     
     }
 }

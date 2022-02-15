@@ -32,10 +32,8 @@
                     <li class="dropdown-header text-start">
                       <h6>Filter</h6>
                     </li>
-
-                    <li><a class="dropdown-item" >Today</a></li>
-                    <li><a class="dropdown-item"asp-controller="Admin" asp-action="IndexMonth">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                    <li><a class="dropdown-item" asp-action="Index" asp-route-sortOrder="@ViewData["countDate"]">Today</a></li>
+                    <li><a class="dropdown-item"asp-action="IndexMonth" asp-route-sortOrder="@ViewData["countMonth"]">This Month</a></li>
                   </ul>
                 </div>
 
@@ -47,9 +45,9 @@
                       <i class="bi bi-people-fill"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>
-                          
-                      </h6>
+                          <h6 >
+                              @Html.ViewData["countDate"]
+                          </h6>             
                     </div>
                   </div>
                 </div>
@@ -102,7 +100,7 @@
                      <thead>
                   <tr>
                     <th scope="col" > @Html.DisplayNameFor(model => model.IdUser)</th>
-                    
+
                     <th scope="col">@Html.DisplayNameFor(model => model.TimeIn)</th>
                     <th scope="col">@Html.DisplayNameFor(model => model.TimeOut)</th>  
                   </tr>
@@ -111,6 +109,7 @@
                     @foreach (var item in Model) {
                   <tr>
                     <td ><a asp-controller="Admin" asp-route-id="@item.IdUser" asp-action="GetUserTime">@Html.DisplayFor(modelItem => item.IdUser)</a></td>
+                    
                     <td>@Html.DisplayFor(modelItem => item.TimeIn)</td>
                     <td>@Html.DisplayFor(modelItem => item.TimeOut)</td>
                   </tr>
@@ -125,8 +124,6 @@
          
           </div>
         </div><!-- End Left side columns -->
-
-    
       </div>
     </section>
 
