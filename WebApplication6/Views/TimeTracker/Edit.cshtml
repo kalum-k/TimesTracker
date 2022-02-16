@@ -6,41 +6,42 @@
 
 <main id="main" class="main">
     <div class="pagetitle">
+        @*<partial name="_StatusMessage" for="StatusMessage" />*@
         <h1>@ViewData["Tittle"]</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Home</a></li>
-                    <li class="breadcrumb-item">Time Tracker</li>
-                </ol>
-            </nav>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item">Time Tracker</li>
+            </ol>
+        </nav>
     </div>
     <!-- End Page Title -->
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="CurrentDate" class="control-label"></label>
-                <input asp-for="CurrentDate"  class="form-control" />
-                <span asp-validation-for="CurrentDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TimeIn" class="control-label"></label>
-                <input asp-for="TimeIn" class="form-control" />
-                <span asp-validation-for="TimeIn" class="text-danger"></span>
-            </div>
-       
-            <div class="form-group">
-                <input asp-for="IdUser" disable  class="form-control" />
-                <span asp-validation-for="IdUser"   class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="CurrentDate" class="control-label"></label>
+                    <input asp-for="CurrentDate" class="form-control" />
+                    <span asp-validation-for="CurrentDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TimeIn" class="control-label"></label>
+                    <input asp-for="TimeIn" class="form-control" />
+                    <span asp-validation-for="TimeIn" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input asp-for="IdUser" disable class="form-control" />
+                    <span asp-validation-for="IdUser" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 </main>
 
 <div>

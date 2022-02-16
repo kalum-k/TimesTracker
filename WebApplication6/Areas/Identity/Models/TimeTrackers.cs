@@ -21,7 +21,7 @@ namespace WebApplication6.Areas.Identity.Data
         //[DisplayFormat(DataFormatString = "{0:HH/mm}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Time)]
         public DateTime TimeOut { get; set; }
-      
+
         public TimeTrackers()
         {
             //var dateTime = DateTime;
@@ -33,7 +33,7 @@ namespace WebApplication6.Areas.Identity.Data
         public int IdTimeStatus { get; set; }
         public TimeSpan Sum { get; set; }
         public string IdUser { get; set; }
-        
-     
+
+
     }
 }

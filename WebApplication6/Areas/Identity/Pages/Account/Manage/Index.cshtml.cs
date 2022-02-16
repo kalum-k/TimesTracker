@@ -26,32 +26,32 @@ namespace TimeTracker.Areas.Identity.Pages.Account.Manage
             _signInManager = signInManager;
         }
 
-       
+
         public string Username { get; set; }
 
-        
+
         [TempData]
         public string StatusMessage { get; set; }
 
-        
+
         [BindProperty]
         public InputModel Input { get; set; }
 
-       
+
         public class InputModel
         {
-            
-            [Display(Name ="User Name")]
+
+            [Display(Name = "User Name")]
             public string UserName { get; set; }
 
-            [Display(Name ="First Name")]
-            public string FirstName { get;set; }
+            [Display(Name = "First Name")]
+            public string FirstName { get; set; }
 
-            [Display (Name ="Last Name")]
+            [Display(Name = "Last Name")]
             public string LastName { get; set; }
 
             [EmailAddress]
-            [Display(Name ="Email")]
+            [Display(Name = "Email")]
             public string Email { get; set; }
 
             [Phone]

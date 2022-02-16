@@ -31,6 +31,18 @@
     <div class="row">
         <div class="col-lg-10">
             <div class="card">
+                 <br/>
+              <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots align-content-end"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+                    <!--fix rounte with another id-->
+                    <li><a class="dropdown-item"asp-controller="Timetracker" asp-action="Timetracker" asp-route-id="7e524d52-4b6d-471a-9896-9f29ee1cfc1d">All</a></li>
+                    <li><a class="dropdown-item"asp-controller="Timetracker" asp-action="TimetrackerMonth" asp-route-id="7e524d52-4b6d-471a-9896-9f29ee1cfc1d" >This Month</a></li>
+                  </ul>
+                </div>
                 <div class="card-body">
                     <h5 class="card-title">Time Tracker</h5>
                         <!-- Table with stripped rows -->

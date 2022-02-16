@@ -19,10 +19,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Areas/Identity/Pages/Account/Manage/Email.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -141,6 +137,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/TimeTracker/Timetracker.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGltZVRyYWNrZXJcVGltZXRyYWNrZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/TimeTracker/TimetrackerMonth.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGltZVRyYWNrZXJcVGltZXRyYWNrZXJNb250aC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/moonp/Downloads/test/WebApplication6/WebApplication6/Views/_ViewImports.cshtml]

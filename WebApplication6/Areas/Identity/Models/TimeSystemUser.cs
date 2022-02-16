@@ -12,18 +12,13 @@ namespace WebApplication6.Areas.Identity.Data;
 public class TimeSystemUser : IdentityUser
 {
     [PersonalData]
-    [Column(TypeName ="nvarchar(100)")]
+    [Required]
+    [Column(TypeName = "nvarchar(100)")]
     public string? FirstName { get; set; }
 
-    [PersonalData] 
+    [PersonalData]
+    [Required]
     [Column(TypeName = "nvarchar(100)")]
     public string? LastName { get; set; }
-
-    [PersonalData]
-    public int IdRole { get; set; }
-
- 
-
-    
 }
 

@@ -37,7 +37,7 @@ namespace TimeTacker.Controllers
             return View(date);
         }
 
-        
+
 
         public IActionResult IndexMonth()
         {

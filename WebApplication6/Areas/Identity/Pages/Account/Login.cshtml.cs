@@ -28,7 +28,7 @@ namespace WebApplication6.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
         }
-     
+
         [BindProperty]
         public InputModel Input { get; set; }
 
@@ -70,9 +70,10 @@ namespace WebApplication6.Areas.Identity.Pages.Account
             ReturnUrl = returnUrl;
         }
 
-        public async Task<IActionResult> OnPostAsync(string returnUrl = null)
+        public async Task<IActionResult> OnPostAsync(string returnUrl = null, string returnUrl1 = null)
         {
             returnUrl ??= Url.Content("~/");
+            returnUrl1 ??= Url.Content("~/TimeTracker");
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 
@@ -81,11 +82,12 @@ namespace WebApplication6.Areas.Identity.Pages.Account
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
-                if (result.Succeeded)
+                if (result.Succeeded )
                 {
                     _logger.LogInformation("User logged in.");
                     return LocalRedirect(returnUrl);
                 }
+
                 if (result.RequiresTwoFactor)
                 {
                     return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });

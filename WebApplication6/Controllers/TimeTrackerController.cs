@@ -19,6 +19,8 @@ namespace TimeTracker.Controllers
         {
             return View();
         }
+        [TempData]
+        public string StatusMessage { get; set; }
 
         public async Task<IActionResult> Timetracker(string id)
         {
@@ -28,6 +30,23 @@ namespace TimeTracker.Controllers
             }
             var timeFromDbFirst = _dbContext.timeTackers
                 .Where(u => u.IdUser == id)
+                .OrderByDescending(y => y.Id).Take(10);
+
+            if (timeFromDbFirst == null)
+            {
+                return NotFound();
+            }
+            return View(timeFromDbFirst);
+        }
+
+        public async Task<IActionResult> TimetrackerMonth(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var timeFromDbFirst = _dbContext.timeTackers
+                .Where(u => u.IdUser == id && u.CurrentDate.Month == DateTime.Now.Month)
                 .OrderByDescending(y => y.Id).Take(10);
 
             if (timeFromDbFirst == null)
@@ -63,7 +82,7 @@ namespace TimeTracker.Controllers
 
                     _dbContext.Add(timeTacker);
                     _dbContext.SaveChanges();
-                    TempData["success"] = "Create successfully";
+                    StatusMessage = "Your time has been Created";
                     return RedirectToAction("Index");
                 }
 
@@ -99,7 +118,7 @@ namespace TimeTracker.Controllers
 
                 _dbContext.timeTackers.Update(timeTackers);
                 _dbContext.SaveChanges();
-
+                StatusMessage = "Your time has been updated";
                 return RedirectToAction("Index");
             }
             return View(timeTackers);
@@ -134,7 +153,7 @@ namespace TimeTracker.Controllers
 
             _dbContext.timeTackers.Remove(obj);
             _dbContext.SaveChanges();
-            TempData["success"] = "deleted successfully";
+            StatusMessage = "Your time has been Deleted";
             return RedirectToAction("Index");
 
         }

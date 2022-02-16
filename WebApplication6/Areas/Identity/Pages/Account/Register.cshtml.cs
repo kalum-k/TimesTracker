@@ -46,7 +46,7 @@ namespace WebApplication6.Areas.Identity.Pages.Account
             _emailSender = emailSender;
         }
 
-        
+
         [BindProperty]
         public InputModel Input { get; set; }
 
@@ -97,11 +97,13 @@ namespace WebApplication6.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new TimeSystemUser { 
+                var user = new TimeSystemUser
+                {
                     UserName = Input.Email,
                     Email = Input.Email,
-                    FirstName = Input.FirstName , 
-                    LastName = Input.LastName };
+                    FirstName = Input.FirstName,
+                    LastName = Input.LastName
+                };
                 /*var user = CreateUser();
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
