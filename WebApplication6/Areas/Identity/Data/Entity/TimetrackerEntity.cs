@@ -1,13 +1,12 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-
+﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
+using TimeTracker.Areas.Identity.Entity;
 
-
-namespace WebApplication6.Areas.Identity.Data
+namespace TimeTracker.Areas.Identity.Data.Entity
 {
-    public class TimeTrackers
+    public class TimetrackerEntity
     {
+
         public int Id { get; set; }
 
         //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
@@ -22,17 +21,10 @@ namespace WebApplication6.Areas.Identity.Data
         [DataType(DataType.Time)]
         public DateTime TimeOut { get; set; }
 
-        public TimeTrackers()
-        {
-            //var dateTime = DateTime;
-            CurrentDate = DateTime.Today;
-            TimeIn = DateTime.Now;
-            TimeOut = DateTime.Now;
-            Sum = DateTime.Now.Subtract(TimeIn);
-        }
         public int IdTimeStatus { get; set; }
         public TimeSpan Sum { get; set; }
         public string IdUser { get; set; }
 
+        public User AspNetUser { get; set; }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using WebApplication6.Areas.Identity.Data;
-
+﻿
 namespace TimeTacker.Areas.Identity.Data
 {
     public class TimeStatus

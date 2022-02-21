@@ -108,10 +108,12 @@ namespace TimeTracker.Areas.Identity.Pages.Account.Manage
             {
                 user.FirstName = Input.FirstName;
             }
+
             if (Input.LastName != user.LastName)
             {
                 user.LastName = Input.LastName;
             }
+
             if (Input.Email != user.Email)
             {
                 user.Email = Input.Email;

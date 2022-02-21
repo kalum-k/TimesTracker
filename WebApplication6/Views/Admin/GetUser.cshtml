@@ -40,6 +40,7 @@
                                         <td>@Html.DisplayFor(modelItem => item.Id)</td>
                                         <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
                                         <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+                                        <td><a asp-action="DeleteUser" asp-route-id="@item.Id">Delete</a></td>
                                         <td><a asp-action="GetUserTime" asp-route-id="@item.Id">Details</a></td>
                                     </tr>
                                 }

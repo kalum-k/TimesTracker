@@ -138,6 +138,39 @@ namespace TimeTacker.Controllers
             return View(timeTacker);
         }
 
+        public IActionResult DeleteUser(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var timeFromDb = _dbContext.user.Find(id);
+
+            if (timeFromDb == null)
+            {
+                return NotFound();
+            }
+
+            return View(timeFromDb);
+        }
+
+        //POST
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeletePOST(int? id)
+        {
+            var obj = _dbContext.user.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            _dbContext.user.Remove(obj);
+            _dbContext.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+
 
     }
 }
