@@ -8,7 +8,6 @@ namespace WebApplication6.Areas.Identity.Data;
 // Add profile data for application users by adding properties to the TimeSystemUser class
 public class TimeSystemUser : IdentityUser
 {
-
     [PersonalData]
     [Required]
     [Column(TypeName = "nvarchar(100)")]
@@ -18,6 +17,5 @@ public class TimeSystemUser : IdentityUser
     [Required]
     [Column(TypeName = "nvarchar(100)")]
     public string? LastName { get; set; }
-    public object Logins { get; internal set; }
 }
 
