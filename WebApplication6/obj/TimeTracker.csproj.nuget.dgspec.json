@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\moonp\\Downloads\\test\\WebApplication6\\WebApplication6\\TimeTracker.csproj": {}
+    "C:\\Users\\moonp\\OneDrive\\เดสก์ท็อป\\TimesTracker\\WebApplication6\\TimeTracker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\moonp\\Downloads\\test\\WebApplication6\\WebApplication6\\TimeTracker.csproj": {
+    "C:\\Users\\moonp\\OneDrive\\เดสก์ท็อป\\TimesTracker\\WebApplication6\\TimeTracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\moonp\\Downloads\\test\\WebApplication6\\WebApplication6\\TimeTracker.csproj",
+        "projectUniqueName": "C:\\Users\\moonp\\OneDrive\\เดสก์ท็อป\\TimesTracker\\WebApplication6\\TimeTracker.csproj",
         "projectName": "TimeTracker",
-        "projectPath": "C:\\Users\\moonp\\Downloads\\test\\WebApplication6\\WebApplication6\\TimeTracker.csproj",
+        "projectPath": "C:\\Users\\moonp\\OneDrive\\เดสก์ท็อป\\TimesTracker\\WebApplication6\\TimeTracker.csproj",
         "packagesPath": "C:\\Users\\moonp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\moonp\\Downloads\\test\\WebApplication6\\WebApplication6\\obj\\",
+        "outputPath": "C:\\Users\\moonp\\OneDrive\\เดสก์ท็อป\\TimesTracker\\WebApplication6\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\moonp\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -13,83 +13,77 @@
 
 
 @if (SignInManager.IsSignedIn(User))
-    {
+{
 
-<main id="main" class="main">
-    <div class="pagetitle">
-        <h1>@ViewData["Tittle"]</h1>
+    <main id="main" class="main">
+        <div class="pagetitle">
+            <h1>@ViewData["Tittle"]</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Home</a></li>
                     <li class="breadcrumb-item">Time Tracker</li>
                 </ol>
             </nav>
-    </div>
-    <!-- End Page Title -->
-
-<section class="section">
-    <div class="row">
-        <div class="col-lg-10">
-            <div class="card">
-                 <br/>
-              <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots align-content-end"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-                    <!--fix rounte with another id-->
-                    <li><a class="dropdown-item"asp-controller="Timetracker" asp-action="Timetracker" asp-route-id="7e524d52-4b6d-471a-9896-9f29ee1cfc1d">All</a></li>
-                    <li><a class="dropdown-item"asp-controller="Timetracker" asp-action="TimetrackerMonth" asp-route-id="7e524d52-4b6d-471a-9896-9f29ee1cfc1d" >This Month</a></li>
-                  </ul>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Time Tracker</h5>
-                        <!-- Table with stripped rows -->
-                        <table id="example" class="table datatable">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.CurrentDate)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.TimeIn)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.TimeOut)
-                                    </th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                        <tbody>
-                            @foreach (var item in Model) {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.CurrentDate)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.TimeIn)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.TimeOut)
-                                    </td>
-                                    <td>
-                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-              <!-- End Table with stripped rows -->
-            </div>
         </div>
-    </div>
-</div>
+        <!-- End Page Title -->
 
- </section>
-<div class="col-md-8">
-    <a asp-action="Index">Back to List</a>
-</div>
-  </main><!-- End #main -->
+    <section class="section dashboard">
+            <div class="row">
+
+                <!-- Left side columns -->
+            <div class="col-lg-8">
+                    <div class="row">
+                        <!-- Recent Sales -->
+                    <div class="col-12">
+                            <div class="card recent-sales overflow-auto">
+
+                                <div class="filter">
+                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                        <li class="dropdown-header text-start">
+                                            <h6>Filter</h6>
+                                        </li>
+
+                                        <li><a class="dropdown-item" asp-action="Timetracker" asp-route-id=@UserManager.GetUserId(User)>All</a></li>
+                                        <li><a class="dropdown-item" asp-action="TimetrackerMonth" asp-route-id=@UserManager.GetUserId(User)>This Month</a></li>
+                                    </ul>
+                                </div>
+                                <div class="card-body pt-3">
+                                    <div class="tab-content pt-2">
+
+                                        <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                                            <h5 class="card-title">Time Tracker<span> | All</span></h5>
+                                            <table class="table datatable">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col"> @Html.DisplayNameFor(model => model.CurrentDate)</th>
+                                                        <th scope="col">@Html.DisplayNameFor(model => model.TimeIn)</th>
+                                                        <th scope="col">@Html.DisplayNameFor(model => model.TimeOut)</th>
+                                                        <th scope="col"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in Model)
+                                                    {
+                                                        <tr>
+                                                            <td>@Html.DisplayFor(modelItem => item.CurrentDate)</td>
+                                                            <td>@Html.DisplayFor(modelItem => item.TimeIn)</td>
+                                                            <td>@Html.DisplayFor(modelItem => item.TimeOut)</td>
+                                                            <td><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></td>
+                                                            <td><a asp-controller="TimeTracker" asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
+                                                        </tr>
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div><!-- End Recent Sales -->
+
+                        </div>
+                        </div><!-- End Left side columns -->
+                </div>
+        </section>
+    </main>
+
+    <!-- End #main -->
 }

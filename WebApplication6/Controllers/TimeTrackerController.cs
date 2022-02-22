@@ -30,7 +30,8 @@ namespace TimeTracker.Controllers
             }
             var timeFromDbFirst = _dbContext.timeTackers
                 .Where(u => u.IdUser == id)
-                .OrderByDescending(y => y.Id).Take(10);
+                .OrderByDescending(y => y.Id);
+                //.Take(10);
 
             if (timeFromDbFirst == null)
             {
@@ -47,7 +48,8 @@ namespace TimeTracker.Controllers
             }
             var timeFromDbFirst = _dbContext.timeTackers
                 .Where(u => u.IdUser == id && u.CurrentDate.Month == DateTime.Now.Month)
-                .OrderByDescending(y => y.Id).Take(10);
+                .OrderByDescending(y => y.Id);
+                //.Take(10);
 
             if (timeFromDbFirst == null)
             {
