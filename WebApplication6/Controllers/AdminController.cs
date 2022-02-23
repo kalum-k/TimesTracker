@@ -27,6 +27,8 @@ namespace TimeTacker.Controllers
         {
             ViewData["countDate"] = _dbContext.timeTackers.Count(u => u.CurrentDate == DateTime.Today).ToString();
             ViewData["countMonth"] = _dbContext.timeTackers.Count(m => m.CurrentDate.Month == DateTime.Now.Month).ToString();
+
+            ViewData["AllUser"] = _dbContext.user.Count().ToString();
             //find who check time today
             var date = _dbContext.timeTackers
                 .Where(d => d.CurrentDate == DateTime.Today)
