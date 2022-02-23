@@ -12,6 +12,9 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <div id="hero">
+        <div class="text-center">
+            @TempData["success"]
+        </div>
         <div class="hero-container">
             <h1>@ViewData["Title"]</h1>
             <div class="countdown">

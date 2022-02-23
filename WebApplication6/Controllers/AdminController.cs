@@ -22,7 +22,7 @@ namespace TimeTacker.Controllers
             _roleManager = roleManager;
         }
 
-
+        //User time in day
         public IActionResult Index()
         {
             ViewData["countDate"] = _dbContext.timeTackers.Count(u => u.CurrentDate == DateTime.Today).ToString();
@@ -34,14 +34,11 @@ namespace TimeTacker.Controllers
             return View(date);
         }
 
-
-
         public IActionResult IndexMonth()
         {
             ViewData["countDate"] = _dbContext.timeTackers.Count(u => u.CurrentDate == DateTime.Today).ToString();
             ViewData["countMonth"] = _dbContext.timeTackers.Count(m => m.CurrentDate.Month == DateTime.Now.Month).ToString();
             var date = _dbContext.timeTackers
-                //.Count(u => u.IdUser == null)
                 .Where(d => d.CurrentDate.Month == DateTime.Now.Month)
                 .OrderByDescending(a => a.Id);
             return View(date);
@@ -50,9 +47,16 @@ namespace TimeTacker.Controllers
         //show all user
         public IActionResult GetUser()
         {
-            IEnumerable<TimeSystemUser> users = _dbContext.Users;
+            IEnumerable<TimeSystemUser> users = _dbContext.Users.OrderBy(x => x.FirstName).ToList();
             return View(users);
         }
+        public IActionResult GetUserFilter2()
+        {
+            IEnumerable<TimeSystemUser> users = _dbContext.Users.OrderBy(x => x.FirstName).ToList();
+            return View(users);
+        }
+
+        //Get User Time
         public IActionResult GetUserTime(string id)
         {
             if (id == null)
@@ -87,7 +91,7 @@ namespace TimeTacker.Controllers
             return View(timeFromDbFirst);
         }
 
-
+        //Role
         public IActionResult CreateRole()
         {
             return View();
@@ -103,7 +107,9 @@ namespace TimeTacker.Controllers
             }
             return View();
         }
+
         //GET
+        //find n Edit time of user
         public IActionResult Edit(int? id)
         {
             if (id == null)
@@ -133,6 +139,42 @@ namespace TimeTacker.Controllers
             return View(timeTacker);
         }
 
+        //GET
+        //Edit Profile User
+        public IActionResult EditProfileUser(string? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var timeFromDb = _dbContext.user.Find(id);
+
+            if (timeFromDb == null)
+            {
+                return NotFound();
+            }
+
+            return View(timeFromDb);
+        }
+
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditProfileUser(TimeSystemUser user)
+        {
+            if (ModelState.IsValid)
+            {
+
+                _dbContext.user.Update(user);
+                _dbContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(user);
+        }
+
+
+
+        //find n delete user
         public IActionResult DeleteUser(int? id)
         {
             if (id == null || id == 0)

@@ -8,39 +8,39 @@
 
 <main id="main" class="main">
     <div class="pagetitle">
-      <h1>@ViewData["Tittle"]</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a asp-controller="Home" asp-action="">Home</a></li>
-          <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="GetUser">Users</a></li>
-          <li class="breadcrumb-item active">Profile</li>
-        </ol>
-      </nav>
+        <h1>@ViewData["Tittle"]</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="">Home</a></li>
+                <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="GetUser">Users</a></li>
+                <li class="breadcrumb-item active">Profile</li>
+            </ol>
+        </nav>
     </div><!-- End Page Title -->
-  
+
     <section class="section profile">
-      <div class="row">
-        <div class="col-xl-4">
-          <div class="card">
-            <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-              <i class="bi bi-twitter rounded-circle" ></i>  
+        <div class="row">
+            <div class="col-xl-4">
+                <div class="card">
+                    <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                        <i class="bi bi-twitter rounded-circle"></i>
 
-                 <h2></h2>
-                 <h3></h3>  
-              
-               
-              <div class="social-links mt-2">
-                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-              </div>
+                        <h2></h2>
+                        <h3></h3>
+
+
+                        <div class="social-links mt-2">
+                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-          </div>
 
-        </div>
-        
-    <section class="section dashboard">
+            <section class="section dashboard">
                 <div class="row">
 
                     <!-- Left side columns -->
@@ -57,8 +57,11 @@
                                                 <h6>Filter</h6>
                                             </li>
 
-                                            <li><a class="dropdown-item" asp-action="GetUserTime" asp-route-id="7e524d52-4b6d-471a-9896-9f29ee1cfc1d">All</a></li>
-                                            <li><a class="dropdown-item" asp-action="GetUserTimeMonth" asp-route-id="7e524d52-4b6d-471a-9896-9f29ee1cfc1d">This Month</a></li>
+                                            @foreach (var items in Model.Take(1))
+                                            {
+                                                <li><a class="dropdown-item" asp-action="GetUserTime" asp-route-id=@items.IdUser>All</a></li>
+                                                <li><a class="dropdown-item" asp-action="GetUserTimeMonth" asp-route-id=@items.IdUser>Month</a></li>
+                                            }
                                         </ul>
                                     </div>
                                     <div class="card-body pt-3">
@@ -82,8 +85,8 @@
                                                                 <td>@Html.DisplayFor(modelItem => item.CurrentDate)</td>
                                                                 <td>@Html.DisplayFor(modelItem => item.TimeIn)</td>
                                                                 <td>@Html.DisplayFor(modelItem => item.TimeOut)</td>
-                                                                <td><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></td>
-                                                                <td><a asp-controller="TimeTracker" asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
+                                                                <td><a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Id"><i class="bi bi-pencil"></i>Edit</a></td>
+                                                                <td><a asp-controller="TimeTracker" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete</a></td>
                                                             </tr>
                                                         }
                                                     </tbody>

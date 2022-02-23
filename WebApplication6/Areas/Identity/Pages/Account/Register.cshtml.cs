@@ -101,6 +101,7 @@ namespace WebApplication6.Areas.Identity.Pages.Account
                 {
                     UserName = Input.Email,
                     Email = Input.Email,
+                    //Role = Input.Role,
                     FirstName = Input.FirstName,
                     LastName = Input.LastName
                 };

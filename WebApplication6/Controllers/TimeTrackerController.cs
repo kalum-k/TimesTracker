@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using TimeTracker.Services;
 using WebApplication6.Areas.Identity.Data;
 using WebApplication6.Data;
-
+using static TimeTracker.Enum.Alerts;
 
 namespace TimeTracker.Controllers
 {
@@ -72,6 +73,7 @@ namespace TimeTracker.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(TimeTrackers timeTacker)
         {
+            
             if (ModelState.IsValid)
             {
                 if (timeTacker.CurrentDate != DateTime.Today)
@@ -83,8 +85,9 @@ namespace TimeTracker.Controllers
                 {
 
                     _dbContext.Add(timeTacker);
+                    //ViewBag.Alert = CommonServices.ShowAlert(Alert.Success, "time added");
+                    TempData["success"] = "Time Created";
                     _dbContext.SaveChanges();
-                    StatusMessage = "Your time has been Created";
                     return RedirectToAction("Index");
                 }
 
@@ -119,8 +122,8 @@ namespace TimeTracker.Controllers
             {
 
                 _dbContext.timeTackers.Update(timeTackers);
+                TempData["success"] = "Time Updates";
                 _dbContext.SaveChanges();
-                StatusMessage = "Your time has been updated";
                 return RedirectToAction("Index");
             }
             return View(timeTackers);
@@ -155,24 +158,11 @@ namespace TimeTracker.Controllers
 
             _dbContext.timeTackers.Remove(obj);
             _dbContext.SaveChanges();
-            StatusMessage = "Your time has been Deleted";
+            TempData["success"] = "Deleted";
             return RedirectToAction("Index");
 
         }
-        public IActionResult Port(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-            var port = _dbContext.timeTackers.Where(u => u.IdUser == id);
-            if (port == null)
-            {
-                return NotFound();
-            }
-
-            return View(port);
-        }
+        
 
     }
 }

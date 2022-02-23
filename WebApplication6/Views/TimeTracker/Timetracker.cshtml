@@ -21,7 +21,8 @@
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Home</a></li>
-                    <li class="breadcrumb-item">Time Tracker</li>
+                    <li class="breadcrumb-item"><a asp-controller="TimeTracker" asp-action="Index">Time Tracker</a></li>
+                    <li class="breadcrumb-item">Report</li>
                 </ol>
             </nav>
         </div>
@@ -29,14 +30,12 @@
 
     <section class="section dashboard">
             <div class="row">
-
                 <!-- Left side columns -->
             <div class="col-lg-8">
                     <div class="row">
                         <!-- Recent Sales -->
                     <div class="col-12">
                             <div class="card recent-sales overflow-auto">
-
                                 <div class="filter">
                                     <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -69,8 +68,8 @@
                                                             <td>@Html.DisplayFor(modelItem => item.CurrentDate)</td>
                                                             <td>@Html.DisplayFor(modelItem => item.TimeIn)</td>
                                                             <td>@Html.DisplayFor(modelItem => item.TimeOut)</td>
-                                                            <td><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></td>
-                                                            <td><a asp-controller="TimeTracker" asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
+                                                            <td><a asp-action="Edit"class="btn btn-warning" asp-route-id="@item.Id"><i class="bi bi-pencil"></i>Edit</a></td>
+                                                            <td><a asp-controller="TimeTracker" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete</a></td>
                                                         </tr>
                                                     }
                                                 </tbody>
@@ -78,10 +77,11 @@
                                         </div>
                                     </div>
                                 </div><!-- End Recent Sales -->
-
                         </div>
                         </div><!-- End Left side columns -->
                 </div>
+                </div>
+            </div>
         </section>
     </main>
 

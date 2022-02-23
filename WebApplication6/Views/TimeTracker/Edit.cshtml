@@ -5,8 +5,10 @@
 }
 
 <main id="main" class="main">
+     <div class="text-center">
+            @TempData["success"]
+        </div>
     <div class="pagetitle">
-        @*<partial name="_StatusMessage" for="StatusMessage" />*@
         <h1>@ViewData["Tittle"]</h1>
         <nav>
             <ol class="breadcrumb">
