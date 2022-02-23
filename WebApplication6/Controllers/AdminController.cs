@@ -45,10 +45,18 @@ namespace TimeTacker.Controllers
         }
 
         //show all user
-        public IActionResult GetUser()
+        public IActionResult GetUser(string searchString)
         {
-            IEnumerable<TimeSystemUser> users = _dbContext.Users.OrderBy(x => x.FirstName).ToList();
-            return View(users);
+            var user = from m in _dbContext.user
+                       select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                user = user.Where(s => s.FirstName!.Contains(searchString) || s.LastName!.Contains(searchString));
+            }
+            return View(user.ToList());
+            //IEnumerable<TimeSystemUser> users = _dbContext.Users.OrderBy(x => x.FirstName).ToList();
+            //return View(users);
         }
         public IActionResult GetUserFilter2()
         {

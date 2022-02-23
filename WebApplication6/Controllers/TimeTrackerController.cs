@@ -16,14 +16,14 @@ namespace TimeTracker.Controllers
         {
             _dbContext = timeTacker;
         }
-        public IActionResult Index()
+        public IActionResult Index(string searchString)
         {
             return View();
         }
         [TempData]
         public string StatusMessage { get; set; }
 
-        public async Task<IActionResult> Timetracker(string id)
+        public async Task<IActionResult> Timetracker(string id ,string searchString)
         {
             if (id == null)
             {
