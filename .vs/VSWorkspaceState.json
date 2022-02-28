@@ -4,8 +4,10 @@
     "\\WebApplication6",
     "\\WebApplication6\\Areas",
     "\\WebApplication6\\Areas\\Identity",
-    "\\WebApplication6\\Areas\\Identity\\Models"
+    "\\WebApplication6\\Areas\\Identity\\Models",
+    "\\WebApplication6\\Views",
+    "\\WebApplication6\\Views\\Admin"
   ],
-  "SelectedNode": "\\WebApplication6\\Areas\\Identity\\Models\\TimeSystemUser.cs",
+  "SelectedNode": "\\WebApplication6\\Views\\Admin\\GetUser.cshtml",
   "PreviewInSolutionExplorer": false
 }
