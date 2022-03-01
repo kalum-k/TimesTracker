@@ -54,7 +54,7 @@ namespace TimeTacker.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                user = user.Where(s => s.FirstName!.Contains(searchString) || s.LastName!.Contains(searchString));
+                user = user.Where(s => s.FirstName!.Contains(searchString) || s.LastName!.Contains(searchString) || s.Id!.Contains(searchString));
             }
             return View(user.ToList());
             //IEnumerable<TimeSystemUser> users = _dbContext.Users.OrderBy(x => x.FirstName).ToList();

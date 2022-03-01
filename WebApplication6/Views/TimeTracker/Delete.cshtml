@@ -7,34 +7,46 @@
 @*<partial name="_StatusMessage" for="StatusMessage" />*@
 
 <main id="main" class="main">
-    <h1>@ViewData["Title"]</h1>
-    <form method="post">
-        <input asp-for="Id" hidden />
-        <div class="border p-3 mt-4">
-            <div class="row pb-2">
-                <h2 class="text-primary">Time</h2>
-                <hr />
-            </div>
-            @*<div asp-validation-summary="All"></div>*@
-            <div class="mb-3">
-                <input asp-for="CurrentDate" class="form-control" />
-                <span asp-validation-for="CurrentDate" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
-                <input asp-for="TimeIn" class="form-control" />
-                <span asp-validation-for="TimeIn" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
-                <label asp-for="TimeOut"></label>
-                <input asp-for="TimeOut" class="form-control" />r
-                <span asp-validation-for="TimeOut" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width:150px">Button</button>
-            <a asp-controller="Timetracker" asp-action="Index" class="btn btn-secondary" style="width:150px">
-                Back to List
-            </a>
+    <div class="text-center">
+        @TempData["success"]
+    </div>
+    <div class="pagetitle">
+        <h1>@ViewData["Tittle"]</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="TimeTracker" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item"><a asp-controller="TimeTracker" asp-action="Index" >Time Tracker</a></li>
+                 <li class="breadcrumb-item">Delete</li>
+            </ol>
+        </nav>
+    </div>
+    <!-- End Page Title -->
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <input asp-for="Id" hidden />
+                <div class="border p-3 mt-4">
+                    @*<div asp-validation-summary="All"></div>*@
+                    <div class="mb-3">
+                        <input asp-for="CurrentDate" class="form-control" />
+                        <span asp-validation-for="CurrentDate" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <input asp-for="TimeIn" class="form-control" />
+                        <span asp-validation-for="TimeIn" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="TimeOut"></label>
+                        <input asp-for="TimeOut" class="form-control" />
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:150px">Button</button>
+                    <a asp-controller="Timetracker" asp-action="Index" class="btn btn-secondary" style="width:150px">
+                        Back to List
+                    </a>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </main>
 @section Scripts{
 	@{

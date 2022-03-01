@@ -6,8 +6,9 @@
     "\\WebApplication6\\Areas\\Identity",
     "\\WebApplication6\\Areas\\Identity\\Models",
     "\\WebApplication6\\Views",
-    "\\WebApplication6\\Views\\Admin"
+    "\\WebApplication6\\Views\\Admin",
+    "\\WebApplication6\\Views\\Shared"
   ],
-  "SelectedNode": "\\WebApplication6\\Views\\Admin\\GetUser.cshtml",
+  "SelectedNode": "\\WebApplication6\\Views\\Shared\\_LoginPartial.cshtml",
   "PreviewInSolutionExplorer": false
 }

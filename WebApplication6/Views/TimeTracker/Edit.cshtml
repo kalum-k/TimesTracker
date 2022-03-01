@@ -5,15 +5,16 @@
 }
 
 <main id="main" class="main">
-     <div class="text-center">
-            @TempData["success"]
-        </div>
+    <div class="text-center">
+        @TempData["success"]
+    </div>
     <div class="pagetitle">
         <h1>@ViewData["Tittle"]</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="Index">Home</a></li>
-                <li class="breadcrumb-item">Time Tracker</li>
+                <li class="breadcrumb-item"><a asp-controller="TimeTracker" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item"><a asp-controller="TimeTracker" asp-action="Index" >Time Tracker</a></li>
+                <li class="breadcrumb-item">Time Out</li>
             </ol>
         </nav>
     </div>
@@ -22,24 +23,24 @@
         <div class="col-md-4">
             <form asp-action="Edit">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="Id" />
-                <div class="form-group">
-                    <label asp-for="CurrentDate" class="control-label"></label>
-                    <input asp-for="CurrentDate" class="form-control" />
-                    <span asp-validation-for="CurrentDate" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="TimeIn" class="control-label"></label>
-                    <input asp-for="TimeIn" class="form-control" />
-                    <span asp-validation-for="TimeIn" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <input asp-for="IdUser" disable class="form-control" />
-                    <span asp-validation-for="IdUser" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-primary" />
+                <div class="border p-3 mt-4">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="mb-3">
+                        <input asp-for="CurrentDate" class="form-control" />
+                        <span asp-validation-for="CurrentDate" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <input asp-for="TimeIn" class="form-control" />
+                        <span asp-validation-for="TimeIn" class="text-danger"></span>
+                    </div>
+                     <div class="mb-3">
+                        <label asp-for="IdUser"></label>
+                        <input asp-for="IdUser" class="form-control" />
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:150px">Button</button>
+                    <a asp-controller="Timetracker" asp-action="Index" class="btn btn-secondary" style="width:150px">
+                        Back to List
+                    </a>
                 </div>
             </form>
         </div>

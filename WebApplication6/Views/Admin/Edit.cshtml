@@ -30,29 +30,23 @@
             <div class="col-md-8">
                 <form asp-action="Edit">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input type="hidden" asp-for="Id" />
-                    <div class="form-group">
-                        <label asp-for="CurrentDate" class="control-label"></label>
-                        <input asp-for="CurrentDate" class="form-control" />
-                        <span asp-validation-for="CurrentDate" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="TimeIn" class="control-label"></label>
-                        <input asp-for="TimeIn" class="form-control" />
-                        <span asp-validation-for="TimeIn" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="TimeOut" class="control-label"></label>
-                        <input asp-for="TimeOut" class="form-control" />
-                        <span asp-validation-for="TimeOut" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="IdUser" class="control-label"></label>
-                        <input asp-for="IdUser" class="form-control" />
-                        <span asp-validation-for="IdUser" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Save" class="btn btn-primary" />
+                    <div class="border p-3 mt-4">
+                        <input type="hidden" asp-for="Id" />
+                        <div class="mb-3">
+                            <input asp-for="CurrentDate" class="form-control" />
+                            <span asp-validation-for="CurrentDate" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <input asp-for="TimeIn" class="form-control" />
+                            <span asp-validation-for="TimeIn" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="TimeOut"></label>
+                            <input asp-for="TimeOut" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
                     </div>
                 </form>
             </div>
